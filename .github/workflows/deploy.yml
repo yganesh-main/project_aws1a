@@ -31,8 +31,6 @@ jobs:
         script: |
           pkill python || true
 
-          cd ~
-          git clone https://github.com/your-username/project_aws1a.git
           
           cd ~/project_aws1a
        
