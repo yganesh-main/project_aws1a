@@ -1,4 +1,4 @@
-\name: Deploy Flask App to EC2
+name: Deploy Flask App to EC2
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
         key: ${{ secrets.EC2_KEY }}
         script: |
           pkill python || true
-          cd ~/flask-app
+          cd ~/project_aws1a
           git pull origin main
           pip3 install -r requirements.txt
           nohup python3 app.py > app.log 2>&1 &
