@@ -30,9 +30,12 @@ jobs:
         key: ${{ secrets.EC2_KEY }}
         script: |
           pkill python || true
+ 
 
-          
           cd ~/project_aws1a
+          chmod u+w .
+          pip3 install -r requirements.txt
+          nohup python3 app.py > app.log 2>&1 &
        
           pip3 install -r requirements.txt
           nohup python3 app.py > app.log 2>&1 &
