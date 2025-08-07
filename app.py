@@ -1,17 +1,13 @@
-
 from flask import Flask
-import datetime
-
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def home():
-    now = datetime.datetime.now()
-    return f"<h1>Hello from EC2! 🚀</h1><p>Deployed at: {now}</p>"
+    return "Hello from GitHub Actions CI/CD!"
 
-@app.route("/about")
+@app.route('/about')
 def about():
-    return "This is a minimal Flask app deployed on EC2 without CodeDeploy or CodeBuild."
+    return "Deployed via GitHub Actions to EC2 🚀"
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80)
